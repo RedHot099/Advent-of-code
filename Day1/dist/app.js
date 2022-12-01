@@ -5,8 +5,14 @@ const input = fs.readFileSync('input.txt', 'utf-8');
 const data = input.toString().split('\r\n\r\n').map(e => e.split('\r\n')).map(e => e.map(i => Number(i)));
 //sum array values
 const sums = data.map(e => e.reduce((a, b) => a + b));
-console.log(sums.sort((a, b) => a - b).reverse()[0]);
+export const top_sum = sums.sort((a, b) => a - b).reverse()[0];
+// console.log(top_sum);
 //sum top3 values in array
-const top3 = sums.sort((a, b) => a - b).reverse().slice(0, 3);
-console.log(top3.reduce((a, b) => a + b));
+export const top3 = sums.sort((a, b) => a - b).reverse().slice(0, 3).reduce((a, b) => a + b);
+// console.log(top3);
+import express from 'express';
+const app = express();
+app.get('/', (req, res) => res.json({ top_sum: top_sum, top3_sums: top3 }));
+const port = process.env.PORT || 8080;
+app.listen(port, () => console.log(`app listening on http://localhost:${port}`));
 //# sourceMappingURL=app.js.map

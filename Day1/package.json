@@ -5,19 +5,24 @@
   "main": "app.ts",
   "type": "module",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "start": "node dist/app.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.11.10",
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20",
     "typescript": "^4.9.3"
   },
   "compilerOptions": {
     "esModuleInterop": true
   },
   "dependencies": {
-    "@types/Node": "npm:@types/node@^18.11.10"
+    "@types/Node": "npm:@types/node@^18.11.10",
+    "express": "^4.18.2"
   }
 }
