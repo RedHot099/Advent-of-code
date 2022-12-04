@@ -25,10 +25,10 @@ console.log(sum1);
 let sum2:number = 0;
 //find overlapping pairs
 input.forEach(e => {
-    const a = e[0][0];
-    const b = e[0][1];
-    const x = e[1][0];
-    const y = e[1][1];
+    const a:number = e[0][0];
+    const b:number = e[0][1];
+    const x:number = e[1][0];
+    const y:number = e[1][1];
     if ((a <= y && a >= x)      //...x...a...y...
         || (b <= y && b >= x)   //...x...b...y...
         || (x <= b && x >= a)   //...a...x...b...
