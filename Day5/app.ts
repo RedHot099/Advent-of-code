@@ -42,7 +42,7 @@ input[1].forEach(e => {
         );
 })
 
-//output top items
+//output top items p2
 let res2:string = "";
 payload1.forEach(e => res2 += e.pop());
 
